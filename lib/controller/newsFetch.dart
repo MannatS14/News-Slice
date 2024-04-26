@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:http/http.dart';
+import 'package:news_slice/model/newsArt.dart';
 
 class NewsFetch {
   static List sources = [
@@ -35,7 +36,7 @@ class NewsFetch {
     "usa-today",
   ];
 
-  static newsFetch() async {
+  static Future<NewsArt> newsFetch() async {
     final random = Random();
     var sourceID = sources[random.nextInt(sources.length)];
     print(sourceID);
@@ -50,5 +51,7 @@ class NewsFetch {
     final Newrandom = Random();
     var myArticle = articles[random.nextInt(articles.length)];
     print(myArticle);
+
+    return NewsArt.fromApitoApp(myArticle);
   }
 }
