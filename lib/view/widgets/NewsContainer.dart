@@ -6,10 +6,12 @@ class NewsContainer extends StatelessWidget {
   String newsHead;
   String newsDes;
   String newsUrl;
+  String newsCnt;
   NewsContainer(
       {super.key,
       required this.imgUrl,
       required this.newsDes,
+      required this.newsCnt,
       required this.newsHead,
       required this.newsUrl});
 
@@ -32,6 +34,9 @@ class NewsContainer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(
+                  height: 20,
+                ),
                 Text(
                   newsHead,
                   style: const TextStyle(
@@ -40,6 +45,11 @@ class NewsContainer extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   newsDes,
+                  style: const TextStyle(fontSize: 14, color: Colors.black38),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  newsCnt,
                   style: const TextStyle(fontSize: 16),
                 ),
               ],

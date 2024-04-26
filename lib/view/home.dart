@@ -24,11 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.vertical,
           itemCount: 10,
           itemBuilder: (context, index) {
+            NewsFetch.newsFetch();
             return NewsContainer(
                 imgUrl:
                     'https://t3.ftcdn.net/jpg/03/27/55/60/360_F_327556002_99c7QmZmwocLwF7ywQ68ChZaBry1DbtD.jpg',
                 newsHead: 'Meta unveils Llama 3 and real-time image generator',
-                newsDes:
+                newsDes: 'Meta unveils Llama 3 and real-time image generator',
+                newsCnt:
                     'Meta Platforms, formerly known as Facebook, has taken a significant stride in the field of generative AI with the release of its latest large language model, Llama 3, and a real-time image generator. The move comes as the tech giant aims to close the gap with market leader OpenAI in the rapidly evolving field of artificial intelligence.',
                 newsUrl:
                     'https://www.businesstoday.in/technology/news/story/meta-unveils-llama-3-and-real-time-image-generator-see-details-426037-2024-04-19');
